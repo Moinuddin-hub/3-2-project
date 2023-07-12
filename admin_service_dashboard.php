@@ -24,8 +24,6 @@ include("data_class.php");
 .row,
 .imglogo {
     margin:auto;
-
-
 }
 .innerdiv{
     text-align:center;
@@ -40,8 +38,6 @@ include("data_class.php");
     width: 75%;
 }
 
-
-
 .greenbtn {
     background-color:rgb(16,170,16);
     color: black;
@@ -49,7 +45,39 @@ include("data_class.php");
     height: 40px;
     margin-top: 8px;
 }
-
+form{
+    margin-top:20px;
+    width: 600px;
+    text-align:center:
+} 
+input[type="text"]{
+    margin-left:10px;
+    width:50%;
+    margin:10px 0px
+}
+input[type="number"]{
+    margin-left:10px;
+    width:50%;
+    margin:10px 0px
+}
+input[type="password"]{
+    margin-left:10px;
+    width:50%;
+    margin:10px 0px
+}
+input[type="email"]{
+    margin-left:10px;
+    width:50%;
+    margin:10px 0px
+}
+.btn{
+    background:red;
+    color:#fff;
+    padding:5px 20px;
+}
+input[type="radio"]{
+    margin:10px;
+}
 </style>
    <body>
    <div class="container">
@@ -74,19 +102,20 @@ include("data_class.php");
             <div class="rightinnerdiv">   
             <div id="addperson" class="innerright portion" style="display:none">
             <Button class="greenbtn" >ADD Person</Button>
+            
+            
             <form action="addpersonserver_page.php" method="post" enctype="multipart/form-data">
-            <label>Name:</label><input type="text" name="addname"/>
+            <label>Name:---</label><input type="text" name="addname"/>
             </br>
-            <label>Pasword:</label><input type="pasword" name="addpass"/>
+            <label>Password:</label><input type="password" name="addpass"/>
             </br>
-            <label>Email:</label><input  type="email" name="addemail"/></br>
+            <label>Email:---</label><input  type="email" name="addemail"/></br>
             <label for="typw">Choose type:</label>
-            <select name="type" >
+            <select name="type"  style="width:200px;">
                 <option value="student">student</option>
                 <option value="teacher">teacher</option>
             </select>
-
-            <input type="submit" value="SUBMIT"/>
+            <input type="submit" class="btn" value="SUBMIT"/>
             </form>
             </div>
             </div>
@@ -174,17 +203,17 @@ include("data_class.php");
             <form action="addbookserver_page.php" method="post" enctype="multipart/form-data">
             <label>Book Name:</label><input type="text" name="bookname"/>
             </br>
-            <label>Detail:</label><input  type="text" name="bookdetail"/></br>
-            <label>Autor:</label><input type="text" name="bookaudor"/></br>
-            <label>Publication</label><input type="text" name="bookpub"/></br>
-            <div><label>Branch:</label><input type="radio" name="branch" value="other"/>Other<input type="radio" name="branch" value="BSIT"/>BSIT<div style="margin-left:80px"><input type="radio" name="branch" value="BSCS"/>BSCS<input type="radio" name="branch" value="BSSE"/>BSSE</div>
+            <label> Book Detail:</label><input  type="text" name="bookdetail"/></br>
+            <label>Book Author:</label><input type="text" name="bookaudor"/></br>
+            <label>Publication:-</label><input type="text" name="bookpub"/></br>
+            <div><label>Branch:</label><input type="radio" name="branch" value="other"/>Other<input type="radio" name="branch" value="BSIT"/>BSIT<div style="margin-left:50px"><input type="radio" name="branch" value="BSCS"/>BSCS<input type="radio" name="branch" value="BSSE"/>BSSE</div>
             </div>   
-            <label>Price:</label><input  type="number" name="bookprice"/></br>
-            <label>Quantity:</label><input type="number" name="bookquantity"/></br>
+            <label>Book Price:</label><input  type="number" name="bookprice"/></br>
+            <label>Quantity:--</label><input type="number" name="bookquantity"/></br>
             <label>Book Photo</label><input  type="file" name="bookphoto"/></br>
             </br>
    
-            <input type="submit" value="SUBMIT"/>
+            <input type="submit" class="btn" value="SUBMIT"/>
             </br>
             </br>
 
@@ -200,9 +229,9 @@ include("data_class.php");
             <div id="issuebook" class="innerright portion" style="display:none">
             <Button class="greenbtn" >ISSUE BOOK</Button>
             <form action="issuebook_server.php" method="post" enctype="multipart/form-data">
-            <label for="book">Choose Book:</label>
-           
-            <select name="book" >
+
+            <label for="book">Choose Book:-</label>
+            <select style="width:300px;"name="book" >
             <?php
             $u=new data;
             $u->setconnection();
@@ -217,7 +246,7 @@ include("data_class.php");
             </select>
 <br>
             <label for="Select Student">Select Student:</label>
-            <select name="userselect" >
+            <select  style="width:300px;" name="userselect" >
             <?php
             $u=new data;
             $u->setconnection();
@@ -230,9 +259,9 @@ include("data_class.php");
             ?>
             </select>
 <br>
-           <label>Days</label> <input type="number" name="days"/>
-
-            <input type="submit" value="SUBMIT"/>
+           <label style="margin-left:60px;">Days:</label> <input style="margin-left:10px;"type="number" name="days"/>
+  <br>
+            <input type="submit" style="margin-left:30px;" class="btn" value="SUBMIT"/>
             </form>
             </div>
             </div>
@@ -349,15 +378,16 @@ include("data_class.php");
 
             <img width='150px' height='150px' style='border:1px solid #333333; float:left;margin-left:20px' src="uploads/<?php echo $bookimg?> "/>
             </br>
-            <p style="color:black"><u>Book Name:</u> &nbsp&nbsp<?php echo $bookname ?></p>
-            <p style="color:black"><u>Book Detail:</u> &nbsp&nbsp<?php echo $bookdetail ?></p>
+         <div class="book-details">
+            <p style="color:red"><u>Book Name:</u> &nbsp&nbsp<?php echo $bookname ?></p>
+            <p style="color:black; margin-left:10px"><u>Book Detail:</u> &nbsp&nbsp<?php echo $bookdetail ?></p>
             <p style="color:black"><u>Book Authour:</u> &nbsp&nbsp<?php echo $bookauthour ?></p>
             <p style="color:black"><u>Book Publisher:</u> &nbsp&nbsp<?php echo $bookpub ?></p>
-            <p style="color:black"><u>Book Branch:</u> &nbsp&nbsp<?php echo $branch ?></p>
-            <p style="color:black"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p>
-            <p style="color:black"><u>Book Available:</u> &nbsp&nbsp<?php echo $bookava ?></p>
-            <p style="color:black"><u>Book Rent:</u> &nbsp&nbsp<?php echo $bookrent ?></p>
-
+            <p style="margin-left:180px"><u>Book Branch:</u> &nbsp&nbsp<?php echo $branch ?></p>
+            <p style="margin-left:180px"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p>
+            <p style="margin-left:180px"><u>Book Available:</u> &nbsp&nbsp<?php echo $bookava ?></p>
+            <p style="margin-left:180px"><u>Book Rent:</u> &nbsp&nbsp<?php echo $bookrent ?></p>
+        </div>
 
             </div>
             </div>

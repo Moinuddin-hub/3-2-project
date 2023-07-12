@@ -49,6 +49,9 @@
     color: #0062cc;
     font-weight: 600;
     text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 

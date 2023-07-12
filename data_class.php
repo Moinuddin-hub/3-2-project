@@ -20,10 +20,6 @@ class data extends db {
     private $getdate;
     private $returnDate;
 
-
-
-
-
     function __construct() {
         // echo " constructor ";
         echo "</br></br>";
@@ -236,8 +232,6 @@ class data extends db {
     
         }
 
-
-
         function getissuebook($userloginid) {
 
             $newfine="";
@@ -271,7 +265,6 @@ class data extends db {
                     $data=$this->connection->query($q);
                     return $data;  
                 }
-    
             }
             else{
                 $q="SELECT * FROM issuebook where userid='$userloginid'";
