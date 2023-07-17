@@ -74,6 +74,7 @@ input[type="email"]{
     background:red;
     color:#fff;
     padding:5px 20px;
+    margin:0px 20px 0px 0px;
 }
 input[type="radio"]{
     margin:10px;
@@ -133,8 +134,9 @@ input[type="radio"]{
             $u->userdata();
             $recordset=$u->userdata();
 
-            $table="<table style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr><th style=' 
-            padding: 8px;'> Name</th><th>Email</th><th>Type</th><th>Delete</th></tr>";
+            $table="<table border='1' style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;style='padding:8px;'><tr>
+          
+                    <th> Name</th><th>Email</th><th>Type</th><th>Delete</th></tr>";
             foreach($recordset as $row){
                 $table.="<tr>";
                "<td>$row[0]</td>";
@@ -169,8 +171,8 @@ input[type="radio"]{
             $u->getbook();
             $recordset=$u->getbook();
 
-            $table="<table style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr><th style=' 
-            padding: 8px;'>Book Name</th><th>Price</th><th>Qnt</th><th>Available</th><th>Rent</th></th><th>View</th></tr>";
+            $table="<table border='1' style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr><th style=' 
+            padding: 8px;'>Book Name</th><th>Price</th><th>Qnt</th><th>Available</th><th>Rent</th></th><th>View</th> <th>Delete</th></tr>";
             foreach($recordset as $row){
                 $table.="<tr>";
                "<td>$row[0]</td>";
@@ -180,7 +182,7 @@ input[type="radio"]{
                 $table.="<td>$row[9]</td>";
                 $table.="<td>$row[10]</td>";
                 $table.="<td><a href='admin_service_dashboard.php?viewid=$row[0]'><button type='button' class='btn btn-primary'>View BOOK</button></a></td>";
-                 $table.="<td><a href='deletebook_dashboard.php?deletebookid=$row[0]'>Delete</a></td>";
+                 $table.="<td><a href='deletebook_dashboard.php?deletebookid=$row[0]' class='btn btn-primary' >Delete</a></td>";
                 $table.="</tr>";
                 // $table.=$row[0];
             }
@@ -281,8 +283,8 @@ input[type="radio"]{
             $u->issuereport();
             $recordset=$u->issuereport();
 
-            $table="<table style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr><th style='  
-            padding: 8px;'>Issue Name</th><th>Book Name</th><th>Issue Date</th><th>Return Date</th><th>Fine</th></th><th>Issue Type</th></tr>";
+            $table="<table border='1' style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr><th style='  
+            padding: 8px;' >Issue Name</th><th>Book Name</th><th>Issue Date</th><th>Return Date</th><th>Fine</th></th><th>Issue Type</th></tr>";
 
             foreach($recordset as $row){
                 $table.="<tr>";
@@ -319,7 +321,7 @@ input[type="radio"]{
             $u->requestbookdata();
             $recordset=$u->requestbookdata();
 
-            $table="<table style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr><th style='
+            $table="<table border='1' style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr><th style='
             padding: 8px;'>Person Name</th><th>person type</th><th>Book name</th><th>Days </th><th>Approve</th></tr>";
             foreach($recordset as $row){
                 $table.="<tr>";

@@ -54,42 +54,39 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 background-size: cover;
 
         }
-        input[type="text"]{
-         width:300px;
-         padding:5px 0px;
-         margin-top:10px;
-        }
-        input[type="password"]{
-                width:300px;   
-                padding:5px 0px;
-              
-        }
-        .btn-primary{
-         color:#fff;
+       .header{
+         display:flex;
+         justify-content:center;
+         height:90vh;
+         align-items:center;
+       }
+       .from-control{
+       
+        text-align:center;
+        width:40%;
+        background:gray;
+        margin-top:120px;
+        padding:10px 0px;
+       }
+       .btn-primary{
+         color:#000;
         font-size:20px;
          padding: 5px 20px;
         }
         .btn{
-         color:#fff;
+         color:#000;
          background: #E55473;
          padding: 5px 30px;  
          border:none;
          margin-left:50px;
-        }
-        h1{
-         margin-top:140px;
-         margin-left:50px;
-         color:red;
+         font-size:20px;
+         border-radius:5px;
         }
         </style>
 <body>
     <center>
         <div class="header">
-       
-
-        
-         
-        <form action="loginadmin_server_page.php" method="POST">
+        <form action="loginadmin_server_page.php" method="POST" class="from-control">
                 
   <div>
         <h1>Login page</h1><br>
@@ -103,8 +100,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 </div>
 <br><br>
 <div>
-      
-        <input type="submit"  class="btn"value="login" required> 
+  <input type="submit"  class="btn"value="login" required> 
 </div>
 <form>
 </div>
